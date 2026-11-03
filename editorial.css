@@ -1,0 +1,63 @@
+:root {
+  --ink: #192324; --muted: #505c58; --rule: #c3c3b7; --paper: #f6f4ee;
+  --action: #123733; --rust: #9a3d29; --serif: "Cormorant Garamond", Georgia, serif;
+}
+html { scroll-behavior: smooth; }
+body, .firm-header, footer { background: var(--paper); }
+.container { width: min(90%, 1480px); }
+.firm-brand { font-weight: 700; letter-spacing: -.055em; color: var(--action); font-size: clamp(20px,1.8vw,27px); }
+.header-inner { border: 0; min-height: 80px; }
+.header-nav { gap: clamp(22px,2.6vw,48px); }
+.header-contact,.primary,.light-btn { border-radius: 2px; }
+.header-contact,.primary { background: var(--action); }
+.header-contact:hover,.primary:hover { background: #244b44; }
+.header-nav a:hover,.text-link:hover { color: var(--rust); }
+.menu-trigger { display: none; }
+.edition-cover { position: relative; display: grid; grid-template-columns: 52% 48%; background: #153832; color: #f6f4e9; }
+.cover-type { padding: clamp(35px,3.7vw,70px) clamp(36px,4.4vw,90px) clamp(43px,4.1vw,78px) max(5vw,calc((100vw - 1480px)/2)); align-self: center; }
+.cover-eyebrow { margin: 0; font-size: 14px; font-weight: 650; line-height: 1.5; letter-spacing: .095em; text-transform: uppercase; }
+.cover-eyebrow { display: flex; align-items:center; gap: 12px; color: #d8ddcc; }
+.cover-eyebrow::before { content:""; flex: 0 0 31px; height: 2px; background: #d29877; }
+.cover-type h1 { margin: clamp(26px,3.0vw,53px) 0 0 -.043em; font: 500 clamp(65px,6.9vw,128px)/.91 var(--serif); letter-spacing: -.052em; }
+.cover-deck { margin: clamp(20px,2.3vw,38px) 0 0; max-width: 42ch; font: 450 clamp(16px,1.18vw,20px)/1.58 var(--sans); color: #e1e7dd; }
+.cover-action { display: inline-flex; align-items: center; gap: 16px; font: 650 15px/1.35 var(--sans); }
+.cover-action { margin-top: clamp(22px,2.3vw,38px); padding: 13px 18px; min-height: 47px; border: 1px solid #b4c9ba; }
+.cover-action:hover { color: #123733; background: #f6f4ee; }
+.cover-action span { font-size: 21px; line-height: 1; transition: transform .25s ease; }
+.cover-action:hover span { transform: translateY(3px); }
+.cover-city { margin: 0; position: relative; min-height: 100%; overflow: hidden; background: #556761; }
+.city-window { position: absolute; inset: 0; }
+.city-window img { width: 100%; height: 100%; object-fit: cover; object-position: 65% 52%; filter: saturate(.57) contrast(1.04); }
+.cover-city figcaption { position: absolute; bottom: 0; right: 0; left: 0; display: flex; justify-content: space-between; flex-wrap: wrap; column-gap: 10px; padding: 33px clamp(18px,2vw,40px) 16px; background: linear-gradient(transparent,rgba(10,25,24,.86)); color: white; font-size: 14px; font-weight: 550; }
+.closing h2 { margin: 0 0 0 -.035em; font: 500 clamp(48px,5.2vw,87px)/.99 var(--serif); letter-spacing: -.045em; }
+.closing { background: var(--action); }
+.closing .container > p { color:#e0e6df; }
+footer { border-top: 1px solid var(--rule); }
+@media(min-width:1800px) { .edition-cover { grid-template-columns: 50% 50%; } }
+@media(max-width:980px) {
+  .header-nav { gap: 17px; }
+  .header-nav a:last-child { display: none; }
+  .cover-type { padding-right: 26px; }
+  .cover-type h1 { font-size: clamp(53px,7.1vw,76px); }
+}
+@media(max-width:760px) {
+  .container { width: calc(100% - 36px); }
+  .header-inner { min-height: 63px; }
+  .menu-trigger { display: inline-flex; }
+  .edition-cover { grid-template-columns: minmax(0,1fr); }
+  .cover-type { padding: 34px 18px 27px; }
+  .cover-type h1 { font-size: clamp(53px,11.8vw,77px); max-width: 12ch; line-height: .94; margin-top: 22px; }
+  .cover-deck { margin-top: 17px; line-height: 1.5; max-width: 45ch; }
+  .cover-action { margin-top: 18px; min-height: 44px; padding: 10px 14px; }
+  .cover-city { height: clamp(165px,44vw,274px); min-height: 0; }
+  .cover-city figcaption { padding: 22px 16px 9px; }
+  .city-window img { object-position: 65% 48%; }
+  .dock { background: #f6f4ee; }
+}
+@media(max-width:360px) {
+  .container { width:calc(100% - 28px); }
+  .cover-type { padding-inline:14px; }
+  .cover-type h1 { font-size:50px; }
+}
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior: auto; } }
+.dock a[aria-current="location"] { color: var(--action); font-weight: 700; }

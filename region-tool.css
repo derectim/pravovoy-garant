@@ -1,0 +1,107 @@
+.case-help {
+  background: #fffefa;
+  color: #172c29;
+  padding-block: clamp(48px, 5.7vw, 90px);
+}
+.case-help-spread {
+  display: grid;
+  grid-template-columns: minmax(0, 1.17fr) minmax(0, .85fr);
+  align-items: center;
+  gap: clamp(38px, 6vw, 108px);
+}
+.case-finder {
+  padding: clamp(26px, 3.6vw, 66px);
+  background: #e9eee7;
+}
+.case-finder-area {
+  margin: 0 0 16px;
+  color: #426253;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 650;
+}
+.case-finder h2 {
+  margin: 0;
+  font: normal 600 clamp(32px, 3.25vw, 58px)/1.04 var(--sans);
+  letter-spacing: -.055em;
+}
+.case-picker { min-width: 0; margin: clamp(19px, 2vw, 32px) 0 0; padding: 0; border: 0; }
+.case-picker legend { margin: 0 0 10px; padding: 0; font-size: 16px; line-height: 1.45; }
+.case-picker input { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.case-picker label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  min-width: 64px;
+  min-height: 43px;
+  margin: 0 2px 4px 0;
+  border: 1px solid #98a99b;
+  border-radius: 2px;
+  padding: 6px 14px;
+  color: #28473d;
+  font: 650 16px/1.2 var(--sans);
+  cursor: pointer;
+  transition: background-color .15s ease, color .15s ease;
+}
+.case-picker input:checked + label { color: #fffefa; border-color: #183a30; background: #183a30; }
+.case-picker input:focus-visible + label { outline: 3px solid #85442e; outline-offset: 2px; }
+.case-picker label:hover { background: #d8e4d8; }
+.court-hints { margin: 19px 0 0; }
+.court-hint { display: none; }
+#court-code-40:checked ~ .court-hints #court-hint-40,
+#court-code-41:checked ~ .court-hints #court-hint-41,
+#court-code-unknown:checked ~ .court-hints #court-hint-unknown { display: block; }
+.court-hint h3 {
+  margin: 0;
+  font: 600 clamp(18px,1.45vw,24px)/1.27 var(--sans);
+  color: #183a30;
+  letter-spacing: -.034em;
+}
+.court-hint h3 a { text-underline-offset: .2em; }
+.court-hint h3 a:hover { text-decoration: underline; }
+.court-hint h3 span { white-space: nowrap; font-size: .86em; }
+.court-hint p { max-width: 52ch; margin: 7px 0 0; color: #40554a; font-size: 16px; line-height: 1.56; }
+.case-finder-link {
+  display: inline-flex; gap: 16px; align-items: center;
+  min-height: 44px; margin: 12px 0 -4px; color: #153c30;
+  font: 650 15px/1.4 var(--sans);
+  text-decoration: underline; text-underline-offset: 4px;
+}
+.case-finder-link span,.first-meeting a span { text-decoration: none; }
+.first-meeting h3 {
+  margin: 0 0 clamp(15px, 2vw, 30px);
+  font: 600 clamp(26px,2.4vw,42px)/1.1 var(--sans);
+  letter-spacing: -.048em;
+}
+.first-meeting details { margin-top: 7px; }
+.first-meeting summary {
+  display: flex; align-items: baseline; gap: 14px;
+  min-height: 44px; padding: 7px 0; list-style: none;
+  font: 550 clamp(16px, 1.23vw, 20px)/1.45 var(--sans);
+  cursor: pointer;
+}
+.first-meeting summary::-webkit-details-marker { display: none; }
+.first-meeting summary::marker { content: ""; }
+.first-meeting summary::before {
+  content: "＋"; display: inline-flex; align-items: center; justify-content: center;
+  flex: 0 0 27px; height: 27px; border-radius: 50%;
+  background: #e9eee7; color: #294d3d;
+  font: 500 17px/1 Arial, sans-serif;
+}
+.first-meeting details[open] summary::before { content: "−"; background: #214434; color: white; }
+.first-meeting summary:hover { color: #486952; }
+.first-meeting details > div { margin: 0 0 18px 41px; max-width: 48ch; }
+.first-meeting details p { margin: 1px 0 5px; color: #4a5850; font-size: 16px; line-height: 1.57; }
+.first-meeting details a { display: inline-block; padding-block: 7px; font-size: 15px; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 900px) {
+  .case-help-spread { gap: 28px; grid-template-columns: minmax(0,1.05fr) minmax(0,1fr); }
+}
+@media (max-width: 720px) {
+  .case-help-spread { grid-template-columns: minmax(0,1fr); gap: 32px; }
+  .case-finder { padding: 23px 20px; }
+}
+@media (max-width: 360px) {
+  .case-finder { padding-inline: 15px; }
+  .case-picker label { min-width: 54px; padding-inline: 11px; }
+}
